@@ -1,0 +1,986 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@600;700;800&display=swap');
+
+
+/* =========================================
+   ROOT
+========================================= */
+
+:root {
+  --ink: #10243b;
+  --blue: #174a7a;
+  --pale-blue: #edf5fb;
+  --paper: #fbfaf6;
+  --silver: #9aa5ae;
+  --light-silver: #dfe5e8;
+  --line: #23384d;
+  --muted: #5d6974;
+  --white: #ffffff;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #dfe6eb;
+  color: var(--ink);
+  font-family: "Libre Baskerville", Georgia, serif;
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   SUBTLE PAPER TEXTURE
+========================================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.045;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================
+   MAIN PAPER
+========================================= */
+
+.masthead,
+main,
+footer {
+  max-width: 1180px;
+  margin: auto;
+  background: var(--paper);
+}
+
+
+/* =========================================
+   MASTHEAD
+========================================= */
+
+.masthead {
+  padding: 28px 48px 20px;
+}
+
+.topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  font: 700 11px/1.2 "Libre Baskerville", serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+
+  margin: 14px 0 5px;
+}
+
+h1 {
+  margin: 0;
+
+  font:
+    800 clamp(42px, 7vw, 82px)/0.86
+    "Playfair Display",
+    serif;
+
+  letter-spacing: -0.055em;
+}
+
+.edition,
+.tagline,
+.date-box {
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-size: 11px;
+}
+
+.edition {
+  margin: 12px 0 0;
+  font-weight: bold;
+}
+
+.date-box {
+  min-width: 175px;
+
+  border: 1px solid var(--line);
+
+  padding: 12px 15px;
+
+  text-align: center;
+
+  background: #f6f5f0;
+}
+
+.date-box strong,
+.date-box span {
+  display: block;
+}
+
+.date-box strong {
+  font-size: 12px;
+}
+
+.date-box span {
+  margin-top: 3px;
+}
+
+.rule {
+  border-top: 4px double var(--line);
+  margin-top: 20px;
+}
+
+.tagline {
+  margin: 12px 0 0;
+
+  text-align: center;
+
+  color: var(--muted);
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+main {
+  padding: 0 48px 55px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 40px;
+
+  padding: 55px 0 42px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.kicker,
+.section-label,
+.ad-small,
+.case-number {
+  font:
+    700 10px/1.2
+    "Libre Baskerville",
+    serif;
+
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.kicker {
+  color: var(--blue);
+  margin: 0 0 10px;
+}
+
+.hero h2 {
+  margin: 0 0 20px;
+  max-width: 900px;
+
+  font:
+    800 clamp(42px, 6vw, 76px)/0.95
+    "Playfair Display",
+    serif;
+}
+
+.lead {
+  max-width: 850px;
+  font-size: 18px;
+}
+
+.byline {
+  margin-top: 20px;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  color: var(--muted);
+}
+
+
+/* =========================================
+   CLASSIFIED BOX
+========================================= */
+
+.classified {
+  align-self: start;
+
+  border: 1px solid var(--line);
+
+  padding: 20px;
+
+  background: #f0f3f4;
+
+  font-size: 11px;
+
+  box-shadow: 5px 5px 0 rgba(23, 74, 122, 0.08);
+}
+
+.classified p {
+  margin: 8px 0;
+}
+
+.stamp {
+  display: block;
+
+  text-align: center;
+
+  border: 2px solid var(--blue);
+
+  color: var(--blue);
+
+  font-weight: bold;
+
+  letter-spacing: 0.18em;
+
+  padding: 5px;
+
+  margin-bottom: 15px;
+
+  transform: rotate(-2deg);
+}
+
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.section-label {
+  color: var(--blue);
+  margin-bottom: 7px;
+}
+
+h3 {
+  margin: 0 0 13px;
+
+  font:
+    700 clamp(25px, 3.3vw, 42px)/1.05
+    "Playfair Display",
+    serif;
+}
+
+
+/* =========================================
+   BREAKING NEWS
+========================================= */
+
+.breaking {
+  margin-top: 38px;
+
+  padding: 28px 0;
+
+  border-top: 3px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+
+/* =========================================
+   TWO COLUMN ARTICLES
+========================================= */
+
+.grid.two {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 45px;
+
+  margin-top: 40px;
+}
+
+.grid.two article + article {
+  border-left: 1px solid var(--silver);
+
+  padding-left: 45px;
+}
+
+
+/* =========================================
+   PULL QUOTE
+========================================= */
+
+.pullquote {
+  margin-top: 25px;
+
+  padding-left: 18px;
+
+  border-left: 4px solid var(--blue);
+
+  font:
+    600 28px/1.15
+    "Cormorant Garamond",
+    serif;
+}
+
+
+/* =========================================
+   THEN & NOW
+========================================= */
+
+.feature {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1.25fr
+    1fr;
+
+  gap: 25px;
+
+  align-items: stretch;
+
+  margin-top: 45px;
+
+  padding: 25px 0;
+
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.feature-copy {
+  padding: 10px 15px;
+}
+
+.feature-image {
+  min-height: 330px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid #aeb8bf;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d9e0e4,
+      #f5f6f5
+    );
+}
+
+.feature-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  min-height: 330px;
+
+  object-fit: cover;
+}
+
+
+/* =========================================
+   PHOTO PLACEHOLDERS
+========================================= */
+
+.image-placeholder {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #52606c;
+
+  background:
+    linear-gradient(
+      135deg,
+      #dfe6ea,
+      #f7f7f3
+    );
+
+  letter-spacing: 0.12em;
+}
+
+.image-placeholder span {
+  font:
+    700 24px
+    "Playfair Display",
+    serif;
+}
+
+.image-placeholder small {
+  margin-top: 10px;
+
+  font:
+    10px
+    "Libre Baskerville",
+    serif;
+
+  letter-spacing: 0.05em;
+}
+
+
+/* =========================================
+   LIFESTYLE
+========================================= */
+
+.lifestyle {
+  margin-top: 38px;
+
+  padding: 32px;
+
+  background: var(--pale-blue);
+
+  border-top: 1px solid var(--blue);
+  border-bottom: 1px solid var(--blue);
+}
+
+.traits {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin: 20px 0;
+}
+
+.traits span {
+  padding: 7px 10px;
+
+  border: 1px solid var(--blue);
+
+  font-size: 10px;
+
+  font-weight: bold;
+
+  letter-spacing: 0.08em;
+
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.center-note {
+  max-width: 750px;
+
+  margin: 20px auto 0;
+
+  text-align: center;
+
+  font:
+    600 25px/1.25
+    "Cormorant Garamond",
+    serif;
+}
+
+
+/* =========================================
+   YEAR 21 FORECAST
+========================================= */
+
+.forecast-grid {
+  align-items: start;
+}
+
+.forecast ul {
+  padding-left: 22px;
+}
+
+.forecast li {
+  margin-bottom: 7px;
+}
+
+.forecast-line {
+  padding-top: 15px;
+
+  border-top: 1px solid var(--silver);
+}
+
+
+/* =========================================
+   CLASSIFIED STATISTICS
+========================================= */
+
+.stats {
+  padding: 24px;
+
+  border: 1px solid var(--line);
+
+  background: #f8f8f4;
+}
+
+.stat {
+  display: grid;
+
+  grid-template-columns: 1fr 1.2fr;
+
+  padding: 10px 0;
+
+  border-bottom: 1px dotted var(--silver);
+}
+
+.stat:last-child {
+  border-bottom: 0;
+}
+
+.stat b {
+  font:
+    700 16px
+    "Playfair Display",
+    serif;
+}
+
+.stat span {
+  font-size: 11px;
+
+  color: var(--muted);
+
+  text-align: right;
+}
+
+
+/* =========================================
+   ADVERTISEMENT
+========================================= */
+
+.advert {
+  margin-top: 38px;
+
+  padding: 35px;
+
+  background: var(--ink);
+
+  color: var(--white);
+
+  text-align: center;
+}
+
+.ad-inner {
+  padding: 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.ad-small {
+  color: #d6e8f5;
+}
+
+.advert h3 {
+  font-size: 35px;
+}
+
+.brand {
+  margin: 0;
+
+  font:
+    800 44px
+    "Playfair Display",
+    serif;
+
+  letter-spacing: 0.04em;
+}
+
+.tiny {
+  margin-top: 18px;
+
+  font-size: 9px;
+
+  opacity: 0.65;
+}
+
+
+/* =========================================
+   OPINION
+========================================= */
+
+.opinion {
+  max-width: 820px;
+
+  margin-top: 38px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: left;
+}
+
+.opinion p {
+  font-size: 15px;
+}
+
+.signature {
+  margin-top: 25px;
+
+  font:
+    700 30px
+    "Cormorant Garamond",
+    serif;
+
+  text-align: right;
+}
+
+
+/* =========================================
+   ARCHIVE
+========================================= */
+
+.archive {
+  margin-top: 38px;
+}
+
+.archive-box {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  margin-top: 20px;
+
+  padding: 25px;
+
+  border: 1px dashed var(--line);
+
+  background: #f2f1eb;
+
+  text-align: center;
+}
+
+.archive-box span {
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+}
+
+.archive-box strong {
+  font:
+    700 24px
+    "Playfair Display",
+    serif;
+}
+
+.archive-box small {
+  color: var(--muted);
+}
+
+
+/* =========================================
+   FINAL REPORT
+========================================= */
+
+.final-report {
+  margin-top: 38px;
+
+  padding: 32px 0;
+
+  border-top: 4px double var(--line);
+  border-bottom: 4px double var(--line);
+
+  text-align: center;
+}
+
+.final-report h3 {
+  font-size: 48px;
+}
+
+.closing {
+  max-width: 700px;
+
+  margin: 25px auto 0;
+
+  font:
+    600 30px/1.1
+    "Cormorant Garamond",
+    serif;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 18px 48px;
+
+  border-top: 1px solid var(--line);
+
+  font-size: 9px;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   HOVER EFFECTS
+========================================= */
+
+.traits span {
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.traits span:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.classified,
+.stats,
+.archive-box {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.classified:hover,
+.stats:hover,
+.archive-box:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 4px 5px 0 rgba(23, 74, 122, 0.08);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .masthead,
+  main {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+
+  .topline {
+    font-size: 8px;
+  }
+
+
+  .title-row {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+
+  .date-box {
+    justify-self: start;
+  }
+
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+
+  .grid.two {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+
+  .grid.two article + article {
+    padding-top: 25px;
+    padding-left: 0;
+
+    border-top: 1px solid var(--silver);
+    border-left: 0;
+  }
+
+
+  .feature {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+
+  .feature-copy {
+    order: 1;
+  }
+
+
+  .feature .feature-image:first-child {
+    order: 0;
+  }
+
+
+  .feature .feature-image:last-child {
+    order: 2;
+  }
+
+
+  .hero h2 {
+    font-size: clamp(40px, 13vw, 60px);
+  }
+
+
+  .lead {
+    font-size: 16px;
+  }
+
+
+  .advert {
+    padding: 20px;
+  }
+
+
+  .advert h3 {
+    font-size: 29px;
+  }
+
+
+  .brand {
+    font-size: 36px;
+  }
+
+
+  .final-report h3 {
+    font-size: 38px;
+  }
+
+
+  footer {
+    padding: 15px 22px;
+
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 480px) {
+
+  .masthead {
+    padding-top: 20px;
+  }
+
+
+  h1 {
+    font-size: 43px;
+  }
+
+
+  .topline {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 7px;
+  }
+
+
+  .hero {
+    padding-top: 35px;
+  }
+
+
+  .hero h2 {
+    font-size: 43px;
+  }
+
+
+  .lifestyle {
+    padding: 22px;
+  }
+
+
+  .traits span {
+    font-size: 9px;
+  }
+
+
+  .center-note {
+    font-size: 22px;
+  }
+
+
+  .final-report h3 {
+    font-size: 34px;
+  }
+
+}
+
+
+/* =========================================
+   PRINT VERSION
+========================================= */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+
+  body::before {
+    display: none;
+  }
+
+
+  .masthead,
+  main,
+  footer {
+    max-width: none;
+  }
+
+
+  .traits span:hover,
+  .classified:hover,
+  .stats:hover,
+  .archive-box:hover {
+    transform: none;
+
+    box-shadow: none;
+  }
+
+}
